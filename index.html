@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quantum Computing for High School Students</title>
+	<link rel="stylesheet" href="static/stylesheets/normalize.css">
+	<link rel="stylesheet" href="static/stylesheets/style.css">
+	<link rel="stylesheet" href="static/js/script.js">
+	<link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Lora:400,400i,700">
+</head>
+<body>
+
+	<div id="particles-js"></div>
+
+	<div class="content-container">
+
+		<h1>Quantum Computing for High School Students</h1>
+
+		<p><em>This essay was written by Scott Aaronson, Associate Professor of Electrical Engineering and Computer Science at MIT</em> (<a href="http://www.scottaaronson.com/writings/highschool.html">source</a>)</p>
+
+		<hr>
+
+		<p>I know this seems corny. I’m a computer science grad student, coming to a high school class to give you a pep talk, and tell you about the many rewards of a career in math and science...</p>
+
+		<p>Well, that’s not why I’m here. If it were up to me, I’d never think about science. I’d be a rock star or a football player. But it’s not up to me. And I’m going to tell you about science because my interest is contagious, like the Ebola virus. So I’m sorry about that. It’s not my choice.</p>
+
+		<p>This is a chemistry class, right? To tell you the truth I don’t know a lot about chemistry. I guess you have atoms, with an itty-bitty nucleus on the inside, and this <a href="https://en.wikipedia.org/wiki/Atomic_orbital" target="_blank">electron cloud</a> outside, and they stick together and make molecules, and there are rules, like, hydrogen only bonds to one thing, but carbon bonds to four things, at least most of the time—there are always exceptions to the rules—Well, anyway, you know more about chemistry than I do.</p>
+
+		<p>But one thing I know is that what underlies chemistry is something called <a href="https://en.wikipedia.org/wiki/Quantum_mechanics" target="_blank">quantum mechanics</a>. So let me ask—did you discuss quantum mechanics in this class? Is it in your textbook? Can I see your textbook?</p>
+
+		<p>Right. They always say something like, “People used to think that electrons were these particles that go around the nucleus like the Earth goes around the Sun. But now we know that actually an electron has no definite position or velocity, and it’s just this smear of <a href="https://en.wikipedia.org/wiki/Probability_amplitude" target="_blank">probability wave</a>, until you measure it, and it decides where it wants to be. But then you turn around and stop looking, and it becomes a smear again.”</p>
+
+		<p>I remember when I was in high school, thinking, what the hell does that mean? When we say an electron is a smear all over the place, isn’t that just a fancy way of saying that it’s somewhere, but we don’t know where it is? Like, “Honey, where’d you put the car keys?” “Oh, they’re in a smear of probability wave all over the house.”</p>
+
+		<p>So what’s going on? If all quantum mechanics said was that we can’t know where the electron is—that all we know is that it has a 20% chance of being here, a 10% chance of being there, and so on—then it wouldn’t be so strange. But what quantum mechanics says is stranger than that.</p>
+
+		<p>Let’s say I was giving a weather forecast for tomorrow. What could I say? “There’s a 40% chance of showers, a 30% chance it will be partly cloudy...” What should the percentages add up to? Right, 100, assuming the events are mutually exclusive.</p>
+
+		<p>But could I ever say, “There’s a –20% chance of rain tomorrow?” No? Why not?</p>
+
+		<p>Well, in quantum mechanics, instead of talking about probabilities, we talk about something called amplitudes and amplitudes can be negative. They can go from <span class="nowrap">–1 to 1</span>. And to find the probability of some event, you take the amplitude of the event, and you square it. What’s a negative number squared? Right, positive. So probabilities are still always from 0 to 1.</p>
+
+		<p>For example, if I were a quantum weather forecaster, I could say, “There’s a \( \frac{1}{\sqrt{2}} \) amplitude of rain tomorrow, and a –\( \frac{1}{\sqrt{2}} \) amplitude of sun.” What’s the square of \( \frac{1}{\sqrt{2}} \)? \( \frac{1}{2} \). And of –\( \frac{1}{\sqrt{2}} \)? Also \( \frac{1}{2} \). So there’s a half chance of rain, a half chance of sun. The probabilities add up to 1, and that makes sense.</p>
+
+		<p>Actually, amplitudes can also be <a href="" target="_blank">complex numbers</a>—did you learn about complex numbers? And to find the probability of an event, first you take the absolute value of the complex number, and then you square it. So, suppose there’s an \( \frac{i}{2} \) amplitude of rain tomorrow. Then what’s the probability? Right, \( \frac{1}{4} \). But from now on we'll ignore that detail.</p>
+
+		<p>But you might ask, what’s the point of talking about things this way? Let me draw a picture:</p>
+
+		<div class="graph">
+			<div class="x-axis"></div>
+		  <div class="y-axis"></div>
+		  <span class="labelx">\( \ket{\textrm{Orange}} \)</span>
+		  <span class="labely">\( \ket{\textrm{Purple}} \)</span>
+		  <span class="axis-tip triangle-y"></span>
+		  <span class="axis-tip triangle-x"></span>
+		</div>
+
+		<p>Don’t worry about the weird-looking brackets (“\( \ket{n} \)”). That’s called the <a href="" target="_blank">Dirac ket notation</a>; we use it to specify quantum states.</p>
+
+		<p>Say there’s something about an electron we want to know, like whether it’s spinning up or spinning down. What does that mean? I don’t know. But it’s not important. It’s just some property of the electron. If you like, we want to know whether the electron is orange or purple.</p>
+
+		<p>Then we describe what we know by giving the amplitude that the electron is orange, and the amplitude that it’s purple. And what is the sum of the squares of the amplitudes? Right, 1. So, if we had an \(x-y\) plane, and we plotted \(x^2+y^2=1\), what kind of shape would we get? Right, a circle.</p>
+
+		<div class="graph">
+			<div class="x-axis"></div>
+		  <div class="y-axis"></div>
+		  <span class="labelx">\( \ket{\textrm{Orange}} \)</span>
+		  <span class="labely">\( \ket{\textrm{Purple}} \)</span>
+		  <span class="axis-tip triangle-y"></span>
+		  <span class="axis-tip triangle-x"></span>
+		  <div class="circle"></div>
+		  <span class="ket">
+		  </span>
+		</div>
+
+		<p>Each radius of the circle corresponds to a possible state of the electron. And when we look at the electron, we force the radius to go either horizontal (orange) or vertical (purple). The closer it is to orange, say, the more likely it is to jump to being completely orange, rather than completely purple. And if it jumps to orange, and then we look at it again (nothing having happened in between) it will still be orange. So by the act of looking at it, we’ve changed the state.</p>
+
+		<p>It would be as though you're in bed at night, and there are monsters that sometimes take a pen and move it from one side of your night table to the other. So you get suspicious, and you turn on the light, and—voila! The pen is just on this side. And you look again—still on that side! As if there never were any monsters.</p>
+
+		<p>So how do we know the monsters ever were there? Suppose that initially, we know the electron is orange. And then we do something to the electron—I dunno, shoot a laser beam at it. And that changes the electron’s state to point diagonally right and upwards.</p>
+
+		$$ \frac{ \ket{\textrm{Orange}} + \ket{\textrm{Purple}}}{\sqrt{2}} $$
+
+		<p>If we look at it then, what will we see? Right, orange or purple, each with 1/2 probability.</p>
+
+		<p>But now suppose that, instead of looking at it, we do the same thing to it a second time—we shoot another laser beam at it. Does anyone have a coin? It would be as though we flipped this coin, and then—without looking at the outcome—flipped it a second time. In the case of the coin, do we then know whether it’s heads or tails? Of course we don’t.</p>
+
+		<p>But in the case of the electron, each time we shoot a laser beam at it, we rotate the radius 45 degrees counterclockwise. So we shoot once—half chance of being orange, half chance of being purple. We shoot again—definitely purple! (What happens if we shoot a third time?)</p>
+
+		<p>Another way to understand what’s going on is interference. The rule is:</p>
+
+		<br>
+
+		$$ \ket{\textrm{Orange}} \longrightarrow \frac{ \ket{\textrm{Orange}} + \ket{\textrm{Purple}}}{\sqrt{2}} $$
+
+		<br>
+
+		$$ \ket{\textrm{Purple}} \longrightarrow \frac{ \ket{\textrm{Orange}} - \ket{\textrm{Purple}}}{\sqrt{2}} $$
+
+		<br>
+
+		<p>So it goes,</p>
+
+		<div class="tree-diagram">
+		  <div class="column zeroth">
+		    <span class="orange ket"> \( + \ket{\textrm{Orange}} \)</span>
+		  </div>
+		  <div class="column first">
+		    <div class="split"></div>
+		    <span class="orange ket"> \( + \ket{\textrm{Orange}} \)</span>
+		    <span class="purple ket"> \( + \ket{\textrm{Purple}} \)</span>
+		  </div>
+		  <div class="column second">
+		    <div class="split"></div>
+		    <div class="split"></div>
+		    <span class="orange ket"> \( + \ket{\textrm{Orange}} \)</span>
+		    <span class="purple ket"> \( + \ket{\textrm{Purple}} \)</span>
+		    <span class="purple ket"> \( - \ket{\textrm{Purple}} \)</span>
+		    <span class="orange ket"> \( + \ket{\textrm{Orange}} \)</span>
+		  </div>
+		</div>
+
+		<br><br>
+
+		<p>The two purple paths interfere and cancel each other out, leaving only the orange paths. (“But I thought I had a half chance of being purple!” “Nope, sorry!")</p>
+
+		<p>You can start to see what’s so weird about quantum mechanics. But if you have, say, 100 electrons instead of just one, then it gets even weirder. Because then, how many ways are there to color each electron either orange or purple? Right, \( 2 \times 2 \times 2 ...\) 100 times, or \(2^{100}\).</p>
+
+		<p>\(2^{20}\) is already 1,048,576. \(2^{100}\) is a number with 31 digits,and it turns out that, to specify the state of the system, you need to give an amplitude for each of those \(2^{100}\) possibilities. So what that means is that, in a sense, the universe is vastly bigger than it looks. If I give you 100 electrons, you might think that it would only take 100, or 200, or 300 numbers to say everything there is to know about those electrons. But that’s not true. It takes about \(2^{100}\) numbers.</p>
+
+		<p>Everything I’ve said so far has been known, more or less, since the 1920’s. Now I want to tell you what’s new in the last ten years, and what I’m doing research on. What’s new is that we want to take this quantum weirdness, and put it to work. We want to use it to build <a href="https://en.wikipedia.org/wiki/Quantum_computing" target="_blank">[quantum] computers</a> that can solve certain problems much faster than any computer today can.</p>
+
+		<p>Because think about it. What I’ve said means that, to keep track of what’s going on with only 100 particles, Nature, off to the side somewhere, has to keep track of about \(2^{100}\) numbers. So if Nature is going to all that effort, why not take advantage of it? One of the first people to propose this was <a href="https://en.wikipedia.org/wiki/Richard_Feynman" target="_blank">Richard Feynman</a>, who you may have heard of.</p>
+
+		<p>The trouble is that as soon as we look at the electrons, we see only one state—this one’s orange, this one’s purple, etc.—like the monster that disappears when we turn the lights on. So if we want to do a useful quantum computation, we have to set things up cleverly, so that states corresponding to wrong answers interfere and cancel each other out, leaving only (or mostly) states corresponding to right answers. It’s not obvious at all that you can do that, but it’s been discovered that for a few problems, you can.</p>
+
+		<p>Here’s an example. What are the prime factors of 39? Right, 3 and 13. OK, what are the prime factors of 7,323,629? A bit harder, huh? It turns out that they’re 2,161 and 3,389. Now, after being told that, is it easy to check whether that’s the right answer? Well, it’s easy enough to multiply the numbers together and check what the product is. And as it turns out, there are also fast methods for determining whether a number is prime or composite, but which (assuming it’s composite) don’t tell you what the prime factors are. So we could verify that 2,161 and 3,389 are prime.</p>
+
+		<p>But how would you find those numbers if you hadn’t been told them? After 2,000 years of mathematical effort, we still don’t know of any method much better than just trying all possible divisors, one after another. (We know of methods that are a little bit better.)</p>
+
+		<p>Why is this problem important? Because of the sheer mathematical beauty of prime numbers? Well, how many of you have bought something from Amazon.com or eBay using a credit card? When you typed your credit card number into the web page, it was encrypted, to prevent hackers from getting access to it. But think about it &ndash; how could it have been encrypted if you’ve never met in private with anyone from Amazon.com to agree on an encryption key? Well, in the 1970’s, an encryption system called <a href="https://simple.wikipedia.org/wiki/RSA_(algorithm)" target="_blank">RSA</a> was invented that gets around this problem. The catch is that the security of RSA depends on the assumption that finding the factors of enormous numbers (say with 1,000 digits) is so hard that nobody will ever do it. If you discover a fast factoring method, then you can break RSA and steal people’s credit card numbers. Cool, huh? (Incidentally, it’s no surprise that a good deal of the funding for quantum computing work comes from the Defense Department and the NSA.)</p>
+
+		<p>In 1994, this guy named <a href="https://en.wikipedia.org/wiki/Peter_Shor" target="_blank">Peter Shor</a> discovered that, with a quantum computer, you could quickly find the factors of enormous numbers—and thereby break RSA. Now you might ask, “How much faster is <a href="https://en.wikipedia.org/wiki/Shor%27s_algorithm" target="_blank">Shor’s algorithm</a> than classical algorithms? Ten times? 100 times?” But the point is that, as you go to larger and larger numbers, Shor’s algorithm does better and better compared to any known classical algorithm, until there’s just no comparison.</p>
+
+		<p>So the million dollar question is, can these quantum computers actually be built? Well, it’s hard. Mainly because the computer has to be shielded from interactions with the outside environment. But there are experimentalists all around the world who are working on it. And they’ve succeeded in building extremely small quantum computers. Incidentally, a big part of what’s involved in this is chemistry, i.e. synthesizing special-purpose molecules to do quantum computation. There was a big achievement about a year ago, when they got a quantum computer to determine that 15 equals 3 \( \times \) 5. Hey, 21 could be next.</p>
+
+		<p>Since Shor’s algorithm, quantum algorithms have been found for a few other problems. But what my own work has focused on, mainly, is what quantum computers <em>can’t</em> do. Why would anyone care about that? Here’s how I think about it: If you prove that an ordinary classical computer can’t solve a certain problem quickly, you might think, “yeah, but that’s only because you’re not using a quantum computer.” But if you prove that a quantum computer can’t do it, then at least given our current understanding of physics, you’ve established an ultimate limitation on the computational power of the universe. And I think that’s sort of cool.</p>
+
+		<p>One last thought. Going back to what I said about quantum mechanics, you might think that it makes no sense. Remember that an electron (say) is in this weird superposition of orange and purple, until you look at it, at which time it makes up its mind which color to be. You might say, “What do you mean, until I look at it? The laws of physics aren’t supposed to say, ‘Things behave this way, until a human looks.’ They should apply equally well to anything, including my own brain!” (In the physics comedy show ‘L'Universe,’ one guy is juggling, and another is observing him with a clipboard, but then he bonks the juggler on the head with the clipboard.)</p>
+
+		<p>There’s a solution of sorts, but it’s mind-blowing. Are you ready for it? OK. It’s that, when you look at the electron, it’s just an ordinary physical interaction involving the electron and your own brain. And what happens is, the <a href="https://en.wikipedia.org/wiki/Many-worlds_interpretation" target="_blank">entire universe splits into two branches</a>: one branch where you see an orange electron, and one where you see a purple electron. In the ‘orange’ branch, you see the state as having jumped to orange, but that’s only because you have no contact with the parallel branch where it jumped to purple. So you can imagine that there are trillions of parallel you’s, who are going to different colleges, etc., and that there are parallel me’s who are rock stars or football players instead of computer science grad students. But even if you accept that, I think that to bridge the gap between that quantum multiverse view, and the world we actually experience (where definite things happen—at least to me!), will require some fundamental new ideas. That’s it. Any questions?</p>
+	</div>
+	<footer>
+		Design and Coding by <a href="https://twitter.com/ianwessen">Ian Wessen</a>. Browser math characters provided by MathJax. Particles by <a href="https://github.com/VincentGarreau/particles.js/">Vincent Garreau</a>.
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!-- Particles Background -->
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<script>
+	particlesJS("particles-js", {"particles":{"number":{"value":40,"density":{"enable":false,"value_area":800}},"color":{"value":"#172D45"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#172D45","opacity":0.4,"width":1},"move":{"enable":true,"speed":3,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+	</script>
+	<!-- Quantum Mechanics Typography Import and Macros -->
+	<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML.js">
+	</script>
+	<script type='text/x-mathjax-config'>
+  MathJax.Hub.Config({
+  TeX: {
+     Macros: {
+      abs: ['\\left|{#1}\\right|',1],
+      bra: ['\\langle{#1}|',1],
+      ket: ['{\\,|\\,{#1}\\rangle}',1],
+      braket: ['\\langle{#1}|{#2}\\rangle',2]
+    }
+  }});
+	</script>
+</body>
+</html>
