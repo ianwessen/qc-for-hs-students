@@ -20,7 +20,7 @@
 
 		<hr>
 
-		<p>I know this seems corny. I’m a computer science grad student, coming to a high school class to give you a pep talk, and tell you about the many rewards of a career in math and science...</p>
+		<p><span class="drop-cap">I</span> know this seems corny. I’m a computer science grad student, coming to a high school class to give you a pep talk, and tell you about the many rewards of a career in math and science...</p>
 
 		<p>Well, that’s not why I’m here. If it were up to me, I’d never think about science. I’d be a rock star or a football player. But it’s not up to me. And I’m going to tell you about science because my interest is contagious, like the Ebola virus. So I’m sorry about that. It’s not my choice.</p>
 
@@ -46,7 +46,7 @@
 
 		<p>But you might ask, what’s the point of talking about things this way? Let me draw a picture:</p>
 
-		<div class="graph">
+		<div class="graph diagram">
 			<div class="x-axis"></div>
 		  <div class="y-axis"></div>
 		  <span class="labelx">\( \ket{\textrm{Orange}} \)</span>
@@ -61,7 +61,7 @@
 
 		<p>Then we describe what we know by giving the amplitude that the electron is orange, and the amplitude that it’s purple. And what is the sum of the squares of the amplitudes? Right, 1. So, if we had an \(x-y\) plane, and we plotted \(x^2+y^2=1\), what kind of shape would we get? Right, a circle.</p>
 
-		<div class="graph">
+		<div class="graph diagram">
 			<div class="x-axis"></div>
 		  <div class="y-axis"></div>
 		  <span class="labelx">\( \ket{\textrm{Orange}} \)</span>
@@ -72,6 +72,9 @@
 		  <span class="ket">
 		  </span>
 		</div>
+		<figcaption>
+			The state of the electron can be any point on the circle.
+		</figcaption>
 
 		<p>Each radius of the circle corresponds to a possible state of the electron. And when we look at the electron, we force the radius to go either horizontal (orange) or vertical (purple). The closer it is to orange, say, the more likely it is to jump to being completely orange, rather than completely purple. And if it jumps to orange, and then we look at it again (nothing having happened in between) it will still be orange. So by the act of looking at it, we’ve changed the state.</p>
 
@@ -101,7 +104,7 @@
 
 		<p>So it goes,</p>
 
-		<div class="tree-diagram">
+		<div class="tree-diagram diagram">
 		  <div class="column zeroth">
 		    <span class="orange ket"> \( + \ket{\textrm{Orange}} \)</span>
 		  </div>
@@ -119,10 +122,13 @@
 		    <span class="orange ket"> \( + \ket{\textrm{Orange}} \)</span>
 		  </div>
 		</div>
+		<figcaption>
+			“But I thought I had a half chance of being purple!” 
+			<br>
+			“Nope, sorry!"
+		</figcaption>
 
-		<br><br>
-
-		<p>The two purple paths interfere and cancel each other out, leaving only the orange paths. (“But I thought I had a half chance of being purple!” “Nope, sorry!")</p>
+		<p>The two purple paths interfere and cancel each other out, leaving only the orange paths.</p>
 
 		<p>You can start to see what’s so weird about quantum mechanics. But if you have, say, 100 electrons instead of just one, then it gets even weirder. Because then, how many ways are there to color each electron either orange or purple? Right, \( 2 \times 2 \times 2 ...\) 100 times, or \(2^{100}\).</p>
 
@@ -151,7 +157,7 @@
 		<p>There’s a solution of sorts, but it’s mind-blowing. Are you ready for it? OK. It’s that, when you look at the electron, it’s just an ordinary physical interaction involving the electron and your own brain. And what happens is, the <a href="https://en.wikipedia.org/wiki/Many-worlds_interpretation" target="_blank">entire universe splits into two branches</a>: one branch where you see an orange electron, and one where you see a purple electron. In the ‘orange’ branch, you see the state as having jumped to orange, but that’s only because you have no contact with the parallel branch where it jumped to purple. So you can imagine that there are trillions of parallel you’s, who are going to different colleges, etc., and that there are parallel me’s who are rock stars or football players instead of computer science grad students. But even if you accept that, I think that to bridge the gap between that quantum multiverse view, and the world we actually experience (where definite things happen—at least to me!), will require some fundamental new ideas. That’s it. Any questions?</p>
 	</div>
 	<footer>
-		Design and Coding by <a href="https://twitter.com/ianwessen">Ian Wessen</a>. Browser math characters provided by MathJax. Particles by <a href="https://github.com/VincentGarreau/particles.js/">Vincent Garreau</a>.
+		Thank you, <a href="https://github.com/VincentGarreau/particles.js/">Scott Aaronson</a>.
 	</footer>
 	<!-- Particles Background -->
 	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
