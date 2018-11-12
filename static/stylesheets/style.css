@@ -6,7 +6,7 @@ body {
   /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "TeX Gyre Schola", serif;
+  font-family: "Lora", serif;
   color: #172D45;
   background: #f8f8f8;
   -webkit-font-smoothing: antialiased; }
